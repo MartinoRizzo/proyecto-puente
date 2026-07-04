@@ -1,0 +1,6 @@
+{
+  "name": "Proyecto Puente",
+  "description": "Una plataforma interactiva que simula un entorno laboral real para desarrolladores, permitiéndoles ganar experiencia práctica como parte de un equipo técnico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
