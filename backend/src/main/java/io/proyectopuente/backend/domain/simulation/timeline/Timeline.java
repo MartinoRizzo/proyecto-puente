@@ -5,14 +5,14 @@ import java.util.Objects;
 
 public record Timeline(
     LocalDate startDate,
-    LocalDate currentDate,
+    LocalDate simulationDate,
     int currentHour, // Virtual hour of the day (e.g., 9 to 18)
     int currentDayOfSprint,
     int totalSprintDays
 ) {
     public Timeline {
         Objects.requireNonNull(startDate, "Start date cannot be null");
-        Objects.requireNonNull(currentDate, "Current date cannot be null");
+        Objects.requireNonNull(simulationDate, "Simulation date cannot be null");
         if (currentHour < 0 || currentHour > 23) {
             throw new IllegalArgumentException("Virtual hour must be between 0 and 23");
         }
@@ -38,10 +38,10 @@ public record Timeline(
         }
 
         if (daysToAdvance == 0) {
-            return new Timeline(this.startDate, this.currentDate, newHour, this.currentDayOfSprint, this.totalSprintDays);
+            return new Timeline(this.startDate, this.simulationDate, newHour, this.currentDayOfSprint, this.totalSprintDays);
         }
 
-        LocalDate newDate = this.currentDate;
+        LocalDate newDate = this.simulationDate;
         int newDayOfSprint = this.currentDayOfSprint;
         
         for (int i = 0; i < daysToAdvance; i++) {

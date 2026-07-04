@@ -43,7 +43,7 @@ public class SimulationSessionRepositoryImpl implements SimulationSessionReposit
                 CompanyId.from(entity.getCompanyId()),
                 new Timeline(
                         entity.getStartDate(),
-                        entity.getCurrentDate(),
+                        entity.getSimulationDate(),
                         entity.getCurrentHour(),
                         entity.getCurrentDayOfSprint(),
                         entity.getTotalSprintDays()
@@ -58,7 +58,7 @@ public class SimulationSessionRepositoryImpl implements SimulationSessionReposit
                 domain.getUserId().value(),
                 domain.getCompanyId().value(),
                 domain.getTimeline().startDate(),
-                domain.getTimeline().currentDate(),
+                domain.getTimeline().simulationDate(),
                 domain.getTimeline().currentHour(),
                 domain.getTimeline().currentDayOfSprint(),
                 domain.getTimeline().totalSprintDays(),

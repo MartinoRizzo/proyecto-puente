@@ -23,8 +23,8 @@ public class SimulationSessionJpaEntity {
     @Column(name = "start_date", nullable = false)
     private LocalDate startDate;
 
-    @Column(name = "current_date", nullable = false)
-    private LocalDate currentDate;
+    @Column(name = "simulation_date", nullable = false)
+    private LocalDate simulationDate;
 
     @Column(name = "current_hour", nullable = false)
     private int currentHour;
@@ -45,7 +45,7 @@ public class SimulationSessionJpaEntity {
             UUID userId,
             UUID companyId,
             LocalDate startDate,
-            LocalDate currentDate,
+            LocalDate simulationDate,
             int currentHour,
             int currentDayOfSprint,
             int totalSprintDays,
@@ -54,7 +54,7 @@ public class SimulationSessionJpaEntity {
         this.userId = userId;
         this.companyId = companyId;
         this.startDate = startDate;
-        this.currentDate = currentDate;
+        this.simulationDate = simulationDate;
         this.currentHour = currentHour;
         this.currentDayOfSprint = currentDayOfSprint;
         this.totalSprintDays = totalSprintDays;
@@ -93,12 +93,12 @@ public class SimulationSessionJpaEntity {
         this.startDate = startDate;
     }
 
-    public LocalDate getCurrentDate() {
-        return currentDate;
+    public LocalDate getSimulationDate() {
+        return simulationDate;
     }
 
-    public void setCurrentDate(LocalDate currentDate) {
-        this.currentDate = currentDate;
+    public void setSimulationDate(LocalDate simulationDate) {
+        this.simulationDate = simulationDate;
     }
 
     public int getCurrentHour() {

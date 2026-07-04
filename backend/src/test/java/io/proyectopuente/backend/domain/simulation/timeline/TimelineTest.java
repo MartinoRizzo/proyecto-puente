@@ -13,7 +13,7 @@ public class TimelineTest {
         Timeline timeline = Timeline.init(start, 10);
 
         assertEquals(start, timeline.startDate());
-        assertEquals(start, timeline.currentDate());
+        assertEquals(start, timeline.simulationDate());
         assertEquals(9, timeline.currentHour());
         assertEquals(1, timeline.currentDayOfSprint());
         assertEquals(10, timeline.totalSprintDays());
@@ -29,7 +29,7 @@ public class TimelineTest {
 
         assertEquals(12, next.currentHour());
         assertEquals(1, next.currentDayOfSprint());
-        assertEquals(start, next.currentDate());
+        assertEquals(start, next.simulationDate());
     }
 
     @Test
@@ -42,6 +42,6 @@ public class TimelineTest {
 
         assertEquals(10, next.currentHour());
         assertEquals(2, next.currentDayOfSprint());
-        assertEquals(start.plusDays(1), next.currentDate());
+        assertEquals(start.plusDays(1), next.simulationDate());
     }
 }

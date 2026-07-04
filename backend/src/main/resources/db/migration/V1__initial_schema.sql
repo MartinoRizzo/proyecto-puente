@@ -23,7 +23,7 @@ CREATE TABLE simulation_sessions (
     user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     company_id UUID NOT NULL,
     start_date DATE NOT NULL,
-    current_date DATE NOT NULL,
+    simulation_date DATE NOT NULL,
     current_hour INT NOT NULL DEFAULT 9,
     current_day_of_sprint INT NOT NULL DEFAULT 1,
     total_sprint_days INT NOT NULL DEFAULT 10,
